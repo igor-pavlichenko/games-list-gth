@@ -19,4 +19,14 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: repeat(auto, minmax(0, 1fr));
   }
+
+  .item:nth-child(5n - 3) {
+    /* every five items, selects the second one */
+    grid-column: span 2;
+    grid-row: span 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
 }
