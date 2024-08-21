@@ -1,0 +1,22 @@
+.app {
+  display: grid;
+  place-items: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: auto;
+}
+
+@media (width >= 375px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 1024px) {
+  .container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(auto, minmax(0, 1fr));
+  }
+}
