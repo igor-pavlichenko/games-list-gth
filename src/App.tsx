@@ -34,9 +34,9 @@ function App() {
   }, [data]);
 
   const filteredGames = useMemo(() => {
-    return data?.filter((game) => {
-      if (!genre) return data;
+    if (!genre) return data;
 
+    return data?.filter((game) => {
       return game.genres.includes(genre);
     });
   }, [data, genre]);
@@ -54,12 +54,14 @@ function App() {
         ))}
       </select>
       <div className="container">
-        {filteredGames?.map((game, idx) => (
+        {filteredGames?.map((game) => (
           <img
-            key={"" + game.name + game.genres}
+            key={game.image}
+            // yessss! "Fallout: New Vegas" is duplicated in the json, with same name and genres
+            // turned out image urls are actually the only unique property here
+            // this was causing all sorts of issue with this item being rendered even though it got filtered out
             src={game.image}
             className={"item"}
-            data-index={idx}
           />
         ))}
       </div>
