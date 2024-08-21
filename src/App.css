@@ -30,3 +30,12 @@
     z-index: 1;
   }
 }
+
+dialog {
+  width: 300px;
+}
+
+::backdrop {
+  background-color: black;
+  opacity: 0.5;
+}
